@@ -1,9 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0px;
     background-color: #e02189;
 }
 
+/*
+darker = e02189
+more light = e94196
+*/
 
 table {
     width: 100%;
@@ -23,7 +27,7 @@ th {
 }
 
 tr {
-    background-color: #e94196;
+    background-color: rgba(255,192,203,1);
 }
 
 a {
