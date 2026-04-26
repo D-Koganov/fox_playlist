@@ -12,6 +12,7 @@ column_bindings[raw_headers[0]] = function(video, raw) {
     let link = document.createElement('a');
     link.href = 'https://www.youtube.com/watch?v=' + video.id;
     link.textContent = video_name;
+    link.target = "_blank";
     let video_cell = document.createElement('td');
     video_cell.appendChild(link);
     return video_cell;
