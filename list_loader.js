@@ -54,7 +54,7 @@ function create_table(container, all_videos, sorting_column) {
     let header_row = document.createElement('tr');
     {
         let a_header = document.createElement('th');
-        a_header.textContent = ""
+        a_header.textContent = "№"
         a_header.style.cursor = 'pointer';
         header_row.appendChild(a_header)
     }
@@ -92,7 +92,7 @@ function create_table(container, all_videos, sorting_column) {
         let row = document.createElement('tr');
         {
             let number = document.createElement('td');
-            number.textContent = i;
+            number.textContent = i + '.';
             row.appendChild(number);
         }
         for (let j = 0; j < table_headers.length; j++) {
