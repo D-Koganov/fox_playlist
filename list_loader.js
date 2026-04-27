@@ -2,6 +2,21 @@ const NUMBER_REGEX = /^\s*-?\d+(\.\d+)?\s*$/;
 var main_container = document.getElementById("main_container")
 var currentSort = { column: null, ascending: null }; //default sorting - by index zero
 
+function format_number(to_divide, dividing_symbol) {
+    let str_to_divide = String(to_divide);
+    let counter = 0;
+    let result = []
+    for (let i = str_to_divide.length-1; i>=0; i--) {
+        result.unshift(str_to_divide[i]);
+        counter++;
+        if (counter>=3) {
+            result.unshift(dividing_symbol);
+            counter = 0;
+        }
+    }
+    return result.join('');
+}
+
 var raw_headers = ['Название видео', 'Дата загрузки', 'Количество просмотров', 'Дата добавления в плейлист'];
 var column_bindings = {}
 column_bindings[raw_headers[0]] = function(video, raw) {
@@ -33,7 +48,7 @@ column_bindings[raw_headers[2]] = function(video, raw) {
         return view_count;
     }
     let view_cell = document.createElement('td');
-    view_cell.textContent = view_count;
+    view_cell.textContent = format_number(view_count, ' ');
     return view_cell;
 }
 
